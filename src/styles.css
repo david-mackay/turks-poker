@@ -7,12 +7,14 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #2b2b2b; /* Dark grey background */
+    color: #e0e0e0; /* Light grey text */
   }
   
   h1, h2 {
     text-align: center;
     margin: 10px 0;
+    color: #e0e0e0; /* Light grey text */
   }
   
   .container {
@@ -51,7 +53,7 @@ body {
   .hidden-card {
     width: 50px;
     height: 70px;
-    background-color: gray;
+    background-color: #444444; /* Darker grey for hidden cards */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,16 +72,20 @@ body {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #555555; /* Dark grey button */
     color: white;
+  }
+  
+  button:hover {
+    background-color: #777777; /* Lighter grey on hover */
   }
   
   pre {
     width: calc(100% - 20px);
     margin: 10px auto;
     padding: 10px;
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #444444; /* Darker grey for result background */
+    border: 1px solid #555555; /* Dark grey border */
     border-radius: 5px;
     font-size: 14px;
     overflow: auto;

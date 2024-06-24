@@ -124,12 +124,28 @@ function App() {
   };
 
   const determineWinner = (pot) => {
-    const dealerHand = Hand.solve([...dealerCards, ...boardCards].map(card => `${card.value[0]}${card.suit[0]}`));
-    const playerHand = Hand.solve([...playerCards, ...boardCards].map(card => `${card.value[0]}${card.suit[0]}`));
+    const valueMap = {
+      '2': '2',
+      '3': '3',
+      '4': '4',
+      '5': '5',
+      '6': '6',
+      '7': '7',
+      '8': '8',
+      '9': '9',
+      '10': 'T',
+      'Jack': 'J',
+      'Queen': 'Q',
+      'King': 'K',
+      'Ace': 'A',
+    };
+  
+    const dealerHand = Hand.solve([...dealerCards, ...boardCards].map(card => `${valueMap[card.value]}${card.suit[0]}`));
+    const playerHand = Hand.solve([...playerCards, ...boardCards].map(card => `${valueMap[card.value]}${card.suit[0]}`));
     const winner = Hand.winners([dealerHand, playerHand]);
-
+  
     let resultMessage = `Dealer's best hand: ${dealerHand.descr}\nPlayer's best hand: ${playerHand.descr}\n\n`;
-
+  
     if (winner.length > 1) {
       resultMessage += 'It\'s a tie!';
       setPlayerMoney((prevMoney) => prevMoney + pot / 2); // Return the player's bet
@@ -139,7 +155,7 @@ function App() {
       resultMessage += 'Player wins!';
       setPlayerMoney((prevMoney) => prevMoney + pot); // Add the entire pot to the player's money
     }
-
+  
     setResult(resultMessage);
   };
 
