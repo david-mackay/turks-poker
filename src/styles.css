@@ -7,14 +7,14 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #2b2b2b; /* Dark grey background */
-    color: #e0e0e0; /* Light grey text */
+    background-color: #b6a5a5; /* Dark grey background */
+    color: #000000; /* Light grey text */
   }
   
   h1, h2 {
     text-align: center;
     margin: 10px 0;
-    color: #e0e0e0; /* Light grey text */
+    color: #000000; /* Light grey text */
   }
   
   .container {
